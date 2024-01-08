@@ -1,0 +1,583 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	position: relative;
+}
+
+.background {
+	background: #00f8f8;
+	table-layout: fixed;
+	border-spacing: 0;
+}
+
+.gameUI {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	z-index: 500;
+}
+
+.infoBox {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	width: 120px;
+	height: 30px;
+}
+
+.begin-screen {
+	background-image: url("../css/super-mario_bkgd.png");
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 300px;
+	color: white;
+	z-index: 501;
+
+}
+
+.begin-screen h1 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.begin-screen p {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.begin-screen button {
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.story-start {
+	background-image: url("../css/storyBackground1.png");
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 270px;
+	color: white;
+	z-index: 501;
+	display: none;
+}
+
+.story-text-box {
+	background-color: rgba(0, 0, 0, 0.6);
+	border: 2px solid white;
+	border-radius: 15px;
+	padding: 20px;
+	width: 75%;
+	height: 75%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.story-text-box h1 {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.story-text-box h5 {
+	margin: 0;
+	margin-top: 10px;
+}
+
+.story-text-box h6 {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.story-money {
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 270px;
+	color: white;
+	z-index: 501;
+	display: none;
+}
+
+.story-mid {
+	background-image: url("../css/Mario2.png");
+	background-color: #00f8f8;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 270px;
+	color: white;
+	z-index: 501;
+	display: none;
+}
+
+.story-conclusion {
+	background-image: url("../css/StoryConclusion.png");
+	background-color: #00f8f8;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 270px;
+	color: white;
+	z-index: 501;
+	display: none;
+}
+
+.story-screen h1 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+
+.pause-screen {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 270px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	z-index: 1000;
+}
+
+.totalScoreScreen {
+	margin-top: 1000px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	width: 120px;
+	height: 30px;
+}
+
+.enemy {
+	background-image: url("../css/enemies.png");
+	background-position: -30px -4px;
+}
+
+
+.ground-top-left {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -0.1em -25.1em;
+}
+
+.ground-top-body {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -1.2em -25.1em;
+}
+
+.ground-top-right {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -2.3em -25.1em;
+}
+
+.ground-bottom-left {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -0.1em -28.3em;
+}
+
+.ground-bottom-body {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -1.2em -28.3em;
+}
+
+.ground-bottom-right {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -2.25em -28.3em;
+}
+
+.ground-full {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -19px -419px;
+}
+
+.ground-dead {
+	background: #00f8f8;
+}
+
+.block {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -20.3em -14.7em;
+}
+
+.BoxEmpty {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -24.55em -0.88em;
+}
+
+.BreakableBlock {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -20.3em -1.95em;
+}
+
+.coin {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -20.3em -5.15em;
+}
+
+.Box {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -20.3em -0.88em;
+}
+
+.BoxCoin {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -20.3em -0.88em;
+}
+
+.BoxMushroom {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -20.3em -0.88em;
+}
+
+.BoxStar {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -20.3em -0.88em;
+}
+
+.BoxExtraLife {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -20.3em -0.88em;
+}
+
+.flag1 {
+	background-image: url("../css/flags.png");
+	background-position: -3em -0em;
+}
+
+.flag2 {
+	background-image: url("../css/flags.png");
+	background-position: -4em -0em;
+}
+
+.flag3 {
+	background-image: url("../css/flags.png");
+	background-position: -3em -1em;
+}
+
+.flag4 {
+	background-image: url("../css/flags.png");
+	background-position: -4em -1em;
+}
+
+.pole1 {
+	background-image: url("../css/flags.png");
+	background-position: -3em -2em;
+}
+
+.pole2 {
+	background-image: url("../css/flags.png");
+	background-position: -4em -2em;
+}
+
+.top-left-cloud {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -138px -197px;
+}
+
+.top-middle-cloud {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -9.69em -12.31em;
+}
+
+.top-right-cloud {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -10.76em -12.31em;
+}
+
+.bottom-left-cloud {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -8.62em -13.37em;
+}
+
+.bottom-middle-cloud {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -9.69em -13.36em;
+}
+
+.bottom-right-cloud {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -10.76em -13.37em;
+}
+
+.pipe-top-left {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -37.52em -10.5em;
+}
+
+.pipe-top-right {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -38.62em -10.5em;
+}
+
+.pipe-body-left {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -37.52em -11.55em;
+}
+
+.pipe-body-right {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -38.58em -11.55em;
+}
+
+.basic-bush {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -6.5em -12.3em;
+}
+
+.mountain-main-top-left {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -172px -401px;
+}
+
+.mountain-main-top-right {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -189px -401px;
+}
+
+.mountain-main-body-left {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -172px -419px;
+}
+
+.mountain-main-body-right {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -189px -419px;
+}
+
+.mountain-child-a-left {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -172px -402px;
+}
+
+.mountain-child-a-right {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -172px -436px;
+}
+
+.mountain-child-b-left {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -11.81em -436px;
+}
+
+.mountain-child-b-right {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -11.81em -25.1em;
+}
+
+.castle-body {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -44.95em -42.8em;
+}
+
+.castle-door-top {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -22.41em -15.75em;
+}
+
+.castle-door-bottom {
+	background-image: url("../css/levelSpirteSheet.png");
+	background-position: -22.41em -16.8em;
+}
+
+.actor {
+	position: absolute;
+}
+
+.player {
+	background-image: url("../css/marioSprites.png");
+	background-position: -253px -8px;
+}
+
+.player.left {
+	transform: scaleX(-1);
+	background-image: url("../css/marioSprites.png");
+	background-position: -253px -8px;
+}
+
+.player.jump {
+	background-image: url("../css/marioSprites.png");
+	background-position: -306px -8px;
+}
+
+.player.jump.left {
+	transform: scaleX(-1);
+	background-image: url("../css/marioSprites.png");
+	background-position: -306px -8px;
+}
+
+.player.step1 {
+	background-image: url("../css/marioSprites.png");
+	background-position: -270px -8px;
+}
+
+.player.step1.left {
+	background-image: url("../css/marioSprites.png");
+	background-position: -270px -8px;
+}
+
+.player.step2 {
+	background-image: url("../css/marioSprites.png");
+	background-position: -342px -8px;
+}
+
+.player.step2.left {
+	background-image: url("../css/marioSprites.png");
+	background-position: -342px -8px;
+}
+
+.player.step3 {
+	background-image: url("../css/marioSprites.png");
+	background-position: -325px -8px;
+}
+
+.player.step3.left {
+	background-image: url("../css/marioSprites.png");
+	background-position: -325px -8px;
+}
+
+.player.big {
+	background-image: url("../css/marioSprites.png");
+	background-position: -197px -48px;
+}
+
+.player.big.jump {
+	background-image: url("../css/marioSprites.png");
+	background-position: -273px -48px;
+}
+
+.player.big.jump.left {
+	transform: scaleX(-1);
+	background-image: url("../css/marioSprites.png");
+	background-position: -273px -48px;
+}
+
+.player.big.step1 {
+	background-image: url("../css/marioSprites.png");
+	background-position: -339px -48px;
+}
+
+.player.big.step1.left {
+	background-image: url("../css/marioSprites.png");
+	background-position: -339px -48px;
+}
+
+.player.big.step2 {
+	background-image: url("../css/marioSprites.png");
+	background-position: -234px -48px;
+}
+
+.player.big.step2.left {
+	background-image: url("../css/marioSprites.png");
+	background-position: -234px -48px;
+}
+
+.player.big.step3 {
+	background-image: url("../css/marioSprites.png");
+	background-position: -215px -48px;
+}
+
+.player.big.step3.left {
+	background-image: url("../css/marioSprites.png");
+	background-position: -215px -48px;
+}
+
+.player.invincible {
+	filter: invert(25%) sepia(90%) saturate(1221%) hue-rotate(30deg) brightness(104%) contrast(101%);
+}
+
+.lost .player {
+	background-image: url("../css/marioSprites.png");
+	background-position: -418px -8px;
+}
+
+.restart .player {
+	background-image: url("../css/marioSprites.png");
+	background-position: -418px -8px;
+}
+
+.won .player {
+	background-image: url("../css/marioSprites.png");
+	background-position: -253px -8px;
+}
+
+.won .player.big {
+	background-image: url("../css/marioSprites.png");
+	background-position: -197px -48px;
+}
+
+.game {
+	overflow: hidden;
+	max-width: 600px;
+	max-height: 450px;
+	position: relative;
+}
+
+.pauseScreen {
+	overflow: hidden;
+	background: magenta;
+	width: 600px;
+	height: 300px;
+	position: relative;
+}
+
+.pauseContent {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.coinElement {
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	background-color: gold;
+	font-size: 12px;
+	text-align: center;
+	line-height: 1em;
+}

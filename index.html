@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Super Mario Game</title>
+	<link rel="stylesheet" href="css/game.css" />
+	<script src="code/gameMaps.js"></script>
+</head>
+
+<body>
+
+	<div id="begin-screen" class="begin-screen">
+		<h1>Welcome to Mario</h1>
+		<h1 id="start-button">Start Game</h1>
+		<h1 id="story-button">Story Mode</h1>
+	</div>
+
+	<div id="story-start" class="story-start">
+		<div id="story-text-box" class="story-text-box">
+			<h5>In the cheerful Mushroom Kingdom, where adventures were a way of life, Mario woke up one morning with
+				his stomach grumbling louder than Bowser's roars. To his surprise, the town's beloved pizzeria had run
+				out of pizza ingredients!<p> Rumor had it that mischievous Goombas had stolen them, leaving everyone
+					craving a slice. Mario, being the kind-hearted hero he was, decided to take matters into his own
+					hands and set off to retrieve the stolen ingredients.</h5>
+			<h6>- click to continue - </h6>
+		</div>
+	</div>
+
+
+
+	<div id="story-mid" class="story-start">
+		<div id="story-text-box" class="story-text-box">
+			<h5>As Mario journeyed through each level, he encountered tricky challenges and hordes of crafty little
+				Goombas.
+				<p> Along the way, he discovered shining gold coins scattered across the land. Mario realized that he
+					needed
+					to collect these coins to buy the missing pizza ingredients from a special vending machine in the
+					heart
+					of the kingdom.
+			</h5>
+			<h6>- click to continue - </h6>
+		</div>
+	</div>
+
+	<div id="story-conclusion" class="story-start">
+		<div id="story-text-box" class="story-text-box">
+			<h5>After numerous daring feats, Mario finally reached the vending machine. Coins in hand, he purchased the
+				missing pizza ingredients. Amid whirring sounds, a delicious aroma wafted. With the ingredients secured,
+				Mario returned to the pizzeria. Cheers erupted as he crafted an extraordinary pizza. <p> With a grin, he
+					savored the final bite, amused by the adventure a simple craving had led to.</h5>
+			<h6>- click for score - </h6>
+		</div>
+	</div>
+
+	<div id="story-money" class="story-money">
+		<div id="story-text-box" class="story-text-box">
+			<h1>Success!  Mario has gathered enough coins! </h1>
+			<h6>- click to continue - </h6>
+		</div>
+	</div>
+
+	<div id="pauseScreen" class="pause-screen">
+		<p>- Paused -</p>
+		<button id="muteButton" onclick="toggleMute">Sound Off</button>
+		<button id="pauseButton">Pause Game</button>
+		<button id="restartGameButton" onclick="restartGame()">
+			Restart Game
+		</button>
+	</div>
+
+	<audio id="themeMusic">
+		<source src="./Music/public_audio_music_overworld.ogg" type="audio/ogg" />
+	</audio>
+
+	<!-- Add the "up" sound -->
+	<audio id="upSound">
+		<source src="./Music/public_audio_jump.ogg" type="audio/ogg" />
+	</audio>
+
+	<!-- Add the "coin" sound -->
+	<audio id="coinGrab">
+		<source src="./Music/public_audio_coin.ogg" type="audio/ogg" />
+	</audio>
+
+	<!-- Add the "stomp" sound -->
+	<audio id="stompEnemy">
+		<source src="./Music/public_audio_stomp.ogg" type="audio/ogg" />
+	</audio>
+
+	<!-- Add the "thwomp" sound -->
+	<audio id="blockKnock">
+		<source src="./Music/public_audio_thwomp.ogg" type="audio/ogg" />
+	</audio>
+
+	<!-- Add the "mushroom" sound -->
+	<audio id="mushroomNoise">
+		<source src="./Music/super_mario_bros_mushroom_sound_effect_58k.mp3" type="audio/mp3" />
+	</audio>
+
+	<!-- Add the "starPower" sound -->
+	<audio id="starPower">
+		<source src="./Music/super-mario-bros-nes-music-star-theme-cut-mp3.mp3" type="audio/mp3" />
+	</audio>
+
+	<div class="gameUI" id="gameUI">
+		<div class="infoBox">
+			<div id="displayLives"></div>
+		</div>
+		<div class="infoBox">
+			<div id="displayCoins"></div>
+		</div>
+		<div class="infoBox">
+			<div id="displayScore"></div>
+		</div>
+		<div class="infoBox">
+			<div id="displayLevel"></div>
+		</div>
+		<div class="infoBox">
+			<div id="remainingTimeDisplay"></div>
+		</div>
+	</div>
+
+	<div id="totalScoreScreen" style="display: none">
+		<h2>Total Score:</h2>
+		<p id="finalTotalScore">0</p>
+	</div>
+
+	<script type="module" src="/code/game.js"></script>
+</body>
+
+</html>
