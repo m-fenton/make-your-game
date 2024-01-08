@@ -1,4 +1,4 @@
-make-you-game
+make-your-game
 
 This project is a Supermario game which incorporates 3 different levels and contains a story mode.
 
